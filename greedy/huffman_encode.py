@@ -2,7 +2,6 @@ import heapq
 from collections import Counter, namedtuple
 
 class Node(namedtuple("Node", ["left", "right"])):
-
     def walk(self, code, acc):
         """code - код, который накопили, дойдя до заданного листа или узла"""
         self.left.walk(code, acc + '0')
@@ -38,7 +37,16 @@ def huffman_encode(s):
     return code
 
 def huffman_decode(encode, code):
-    pass
+    #primitive, without tree
+    result = ''
+    keys = code.keys()
+    while len(encode) > 0:
+        for k in keys:
+            if encode[:len(k)] == k:
+                result += code[k]
+                encode = encode[len(k):]
+
+    return result
 
 def main():
     s = input()
@@ -48,6 +56,8 @@ def main():
     for ch in sorted(code):
         print("{}: {}".format(ch, code[ch]))
     print(encoded)
+
+    print('huffman_decode', huffman_decode("01001100100111", {'0': 'a', '10': 'b', '110': 'c', '111': 'd'}))
 
 def test(n_iter = 100):
     import random
