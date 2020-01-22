@@ -1,3 +1,8 @@
-.idea
-temp.py
-temp*.py
+/temp
+/cpp/Debug
+/cpp/.vs
+cpp/sport_cpp.cpp
+cpp/sport_cpp.sln
+cpp/sport_cpp.vcxproj
+cpp/sport_cpp.vcxproj.filters
+cpp/sport_cpp.vcxproj.user
