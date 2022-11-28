@@ -1,3 +1,7 @@
 .idea
 temp.py
 temp*.py
+
+
+__pycache__
+.vscode
